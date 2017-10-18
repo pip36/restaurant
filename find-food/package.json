@@ -13,7 +13,10 @@
     "test": "npm run unit && npm run e2e"
   },
   "dependencies": {
+    "axios": "^0.16.2",
+    "bulma": "^0.6.0",
     "firebase": "^4.5.0",
+    "firebase-functions": "^0.7.1",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0"
   },
