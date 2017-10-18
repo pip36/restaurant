@@ -130,6 +130,7 @@ export default {
           var newRestaurants = [];
           for(var i = 0; i < response.data.results.length; i++){
             var rest_data = response.data.results[i];
+            if( (rest_data.opening_hours != undefined) && (rest_data.opening_hours.open_now == false || rest_data.opening_hours == undefined) ){ continue; }
             console.log(rest_data);
             var name = (rest_data.name) ? rest_data.name : null;
             var rating = (rest_data.rating != undefined) ? rest_data.rating : null;
