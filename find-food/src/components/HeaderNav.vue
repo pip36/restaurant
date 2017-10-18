@@ -3,16 +3,20 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
 
     <div class="navbar-brand">
-      <a class="navbar-item">
-        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" alt="Bulma">
+      <a class="navbar-item" href="https://bulma.io">
+        <img src="../assets/logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="100" height="28">
       </a>
+      <button @click="toggleHamburger()" :class="{ 'is-active': hamburgerOpen }" class="button navbar-burger" data-target="main-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
     </div>
 
-    <div class="navbar-menu">
+    <div :class="{ 'is-active': hamburgerOpen }" class="navbar-menu" id="main-nav">
       <div class="navbar-end">
-        <p class="navbar-item" v-if="loggedIn()">
-          You are logged in
-        </p>
+
         <a class="navbar-item" v-if="loggedIn()" @click="logout()">
           Log out
         </a>
@@ -33,7 +37,7 @@ export default {
   name: 'headernav',
   data () {
     return {
-
+      hamburgerOpen: false
     }
   },
   methods:{
@@ -45,11 +49,25 @@ export default {
       firebase.auth().signOut().then(
         () => this.$router.replace('/login')
       )
+    },
+    toggleHamburger(){
+      (this.hamburgerOpen) ? this.hamburgerOpen = false : this.hamburgerOpen = true
     }
   }
 }
 </script>
 
 <style scoped>
+  .logo{
+      height:140px;
+      margin-top: -40px;
+  }
 
+  .navbar-brand{
+    overflow: visible;
+  }
+
+  nav{
+    z-index: 5;
+  }
 </style>
