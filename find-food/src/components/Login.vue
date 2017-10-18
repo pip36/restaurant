@@ -1,10 +1,29 @@
 <template>
   <div class="login">
-    <h1> Log In </h1>
-    <input type="email" v-model="email" placeholder="email"> </br>
-    <input type="password" v-model="password" placeholder="password"> </br>
-    <button @click="login"> Login </button> </br>
-    <router-link to="/signup"> Don't have an account? Sign up! </router-link>
+
+    <div class='field'>
+      <div class='label'> Email </div>
+      <div class='control'>
+        <input class="input" type="email" v-model="email" placeholder="email">
+      </div>
+    </div>
+
+    <div class='field'>
+      <div class='label'> Password </div>
+      <div class='control'>
+          <input class="input" type="password" v-model="password" placeholder="password">
+      </div>
+    </div>
+
+    <div class='field is-grouped'>
+      <div class='control'>
+          <button class="button is-link" @click="login"> Login </button>
+      </div>
+      <div class='control'>
+          <router-link class="button is-text" to="/signup"> Don't have an account? Sign up! </router-link>
+      </div>
+    </div>
+
   </div>
 </template>
 
