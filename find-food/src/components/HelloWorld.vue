@@ -24,32 +24,29 @@
       </div>
 
       <div  v-if="restaurants.length > 0" class="centered">
-        <h1 class="title is-spaced"> {{ restaurants[currentRestaurant].name }} </h1>
+        <h1 class="title is-4 is-spaced"> {{ restaurants[currentRestaurant].name }} </h1>
         <figure class="image">
           <img src="https://bulma.io/images/placeholders/640x480.png">
         </figure>
 
         <div class="columns">
           <div class="column">
-            <p class="subtitle"> Rating: {{ restaurants[currentRestaurant].rating }} </p>
-          </div>
-          <div class="column">
             <span class="icon has-text-success">
-              <i :class="{ unchecked: restaurants[currentRestaurant].rating < 0.5 }" class="fa fa-star fa-2x"></i>
-              <i :class="{ unchecked: restaurants[currentRestaurant].rating < 1.5 }" class="fa fa-star fa-2x"></i>
-              <i :class="{ unchecked: restaurants[currentRestaurant].rating < 2.5 }" class="fa fa-star fa-2x"></i>
-              <i :class="{ unchecked: restaurants[currentRestaurant].rating < 3.5 }" class="fa fa-star fa-2x"></i>
-              <i :class="{ unchecked: restaurants[currentRestaurant].rating < 4.5 }" class="fa fa-star fa-2x"></i>
+              <i :class="{ unchecked: restaurants[currentRestaurant].rating < 0.5 }" class="fa fa-star fa-1x"></i>
+              <i :class="{ unchecked: restaurants[currentRestaurant].rating < 1.5 }" class="fa fa-star fa-1x"></i>
+              <i :class="{ unchecked: restaurants[currentRestaurant].rating < 2.5 }" class="fa fa-star fa-1x"></i>
+              <i :class="{ unchecked: restaurants[currentRestaurant].rating < 3.5 }" class="fa fa-star fa-1x"></i>
+              <i :class="{ unchecked: restaurants[currentRestaurant].rating < 4.5 }" class="fa fa-star fa-1x"></i>
             </span>
           </div>
         </div>
 
         <div class="columns">
           <div class="column">
-            <a class="button is-large is-outlined is-primary" target="_blank" v-bind:href="restaurants[currentRestaurant].mapsrc"> Take me there </a>
+            <a class="button is-medium is-outlined is-primary" target="_blank" v-bind:href="restaurants[currentRestaurant].mapsrc"> Take me there </a>
           </div>
           <div class="column">
-            <button class="button is-large is-outlined is-primary" v-if="restaurants.length > 0" @click="nextRestaurant"> Next! </button>
+            <button class="button is-medium is-outlined is-primary" v-if="restaurants.length > 0" @click="nextRestaurant"> Next! </button>
           </div>
         </div>
 
